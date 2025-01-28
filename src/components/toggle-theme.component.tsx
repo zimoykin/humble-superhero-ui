@@ -54,10 +54,10 @@ const ToggleThemeComponent: React.FC = () => {
     };
 
     return (
-        <div className='p-5 flex flex-col justify-center'
+        <div className='p-1 flex flex-col justify-center'
             onClick={toggleTheme}
         >
-            <h1 className='p-5 border-2 transition ease-in-out delay-75 hover:bg-secondary-bg hover:text-main-col hover:scale-110 uppercase'> {theme} </h1>
+            <h3 className='p-1 text-center border-2 transition ease-in-out delay-75 hover:bg-secondary-bg hover:text-main-col hover:scale-110 uppercase'> {theme} </h3>
             <span className="text-center">
                 {`click to switch to ${getNextThemeName()}`}
             </span>
