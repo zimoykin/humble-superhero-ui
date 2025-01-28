@@ -12,7 +12,6 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import themaReducer from "./features/thema/thema-slice";
-import authReducer from "./features/auth/auth-slice";
 
 // Persist configuration
 const persistConfigThema = {
@@ -20,20 +19,13 @@ const persistConfigThema = {
   version: 1,
   storage,
 };
-const persistConfigAuth = {
-  key: "auth",
-  version: 1,
-  storage,
-};
 
 // Create persisted reducers
 const persistedReducerThema = persistReducer(persistConfigThema, themaReducer);
-const persistedReducerAuth = persistReducer(persistConfigAuth, authReducer);
 
 const store = configureStore({
   reducer: {
     thema: persistedReducerThema,
-    auth: persistedReducerAuth,
   },
 
   middleware: (
